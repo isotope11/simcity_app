@@ -1,4 +1,4 @@
-module Simcity
+module SimcityApp
   class Session
     attr_reader :map, :cash
 
@@ -20,6 +20,11 @@ module Simcity
 
     def cost_for_class(klass)
       cost_mappings[klass]
+    end
+
+    # Clear a cell at a given point
+    def clear(point)
+      @map.cell_at(point).clear
     end
 
     private

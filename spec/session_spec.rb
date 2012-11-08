@@ -52,4 +52,12 @@ describe Session do
       subject.cost_for_class(klass).should == BigDecimal(price)
     end
   end
+
+  it 'can clear a given cell' do
+    fake_cell = mock 'fake cell'
+    point = Map::Point.new(1, 2)
+    subject.map.should_receive(:cell_at).with(point).and_return(fake_cell)
+    fake_cell.should_receive(:clear)
+    subject.clear(point)
+  end
 end
