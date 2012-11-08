@@ -53,6 +53,9 @@ cash.
     @session.cash
     #=> BigDecimal('150')
 
+#### To clear a cell
+    @session.clear(point)
+
 #### The map is available from the session
 To get at the underlying simulation, you can just reference the `#map`
 
